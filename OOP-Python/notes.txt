@@ -1,0 +1,13 @@
+4 Principles of OOP
+1. Inheritance
+2. Polymorphism
+3. Encapsulation
+4. Abstraction
+
+## SECTION 1 NOTES ##
+- Classess are used for more complex data structures. 
+- It is a blueprint for something to be defined.
+- Creating a class (blueprint)
+- Creating an instance (object)
+- Defining instance attributes
+- Defining class attributes
