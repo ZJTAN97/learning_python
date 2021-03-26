@@ -29,6 +29,8 @@ class SoftwareEngineer:
     def __eq__(self, other):
         return self.name == other.name and self.age == other.age
     
+    # cannot access the self attribute
+    @staticmethod
     def entry_salary(age):
         if age < 25:
             return 5000
@@ -51,3 +53,5 @@ print(se1)
 
 # to test __eq__
 print(se2 == se3)
+
+print(se1.entry_salary(24))

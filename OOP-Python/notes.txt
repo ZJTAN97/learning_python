@@ -11,3 +11,16 @@
 - Creating an instance (object)
 - Defining instance attributes
 - Defining class attributes
+
+
+## SECTION 2 NOTES ##
+- instance method (self)
+- can take arguments and can return values
+- special "dunder" methods (__str__ and __eq__)
+- @staticmethod 
+
+## SECTION 3 NOTES ##
+- inheritance: ChildClass(BaseClass)
+- Inherit, extend, override
+- super().__init__()
+- Polymorphism
