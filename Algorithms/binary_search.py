@@ -1,28 +1,52 @@
-def binary_search(list, target):
-    first = 0
-    last = len(list) - 1
+class BinarySearch():
 
-    while first <= last:
-        midpoint = (first+last) // 2 # round down to nearest whole number
+    def search_iterative(self, list, item):
+        low = 0
+        high = len(list) - 1
 
-        if list[midpoint] == target: # constant time operations
-            return midpoint
-        elif list[midpoint] <= target:
-            first = midpoint + 1
-        else:
-            last = midpoint - 1
+        while low <= high:
+            mid = (low + high) // 2
+            guess = list[mid]
+            
+            # found the solution
+            if guess == item:
+                return mid
+
+            # guess too high
+            if guess > item:
+                high = mid - 1
+            # guess too low
+            else:
+                low = mid + 1
+            
+        # doesnt exist
+        return None
     
-    return None
+    def search_recursive(self, list, low, high, item):
+        
+        # check base case
+        if high >= low:
+            mid = (high + low) // 2
+            guess = list[mid]
 
+            if guess == item:
+                return mid
+            
+            elif guess > item:
+                return self.search_recursive(list, low, mid-1, item)
+            
+            else:
+                return self.search_recursive(list, mid+1, high, item)
+        
+        else:
+            # doesnt exist
+            return None
 
-def verify(index):
-    if index is not None:
-        print("Target found at index: ", index)
-    else:
-        print("Target not found in list.")
+    
 
+if __name__ == "__main__":
+    bs = BinarySearch()
+    sample_list = [1, 3, 5, 7, 9, 11]
 
-numbers = [x for x in range(11)]
-result = binary_search(numbers, 10)
-
-verify(result)
+    print(bs.search_iterative(sample_list, 11))
+    print(bs.search_recursive(sample_list, 0, 5, 11))
