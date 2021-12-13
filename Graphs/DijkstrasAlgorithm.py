@@ -14,4 +14,18 @@ graph["b"]["fin"] = 5
 
 graph["fin"] = {}
 
-print(graph)
+
+
+sample_dict = {
+    "test": "a",
+    "test2": "b",
+}
+
+
+for key,value in sample_dict.items():
+    print(key)
+    print(value)
+
+
+
+print(sample_dict.popitem())
